@@ -69,3 +69,13 @@ void oledkit_render_info_user(void) {
     keyball_oled_render_layerinfo();
 }
 #endif
+
+// followings are added customizations
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(1, KC_F):
+            return 130;
+        default:
+            return TAPPING_TERM;
+    }
+}

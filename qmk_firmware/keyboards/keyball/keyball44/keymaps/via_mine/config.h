@@ -40,3 +40,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define HOLD_ON_OTHER_KEY_PRESS
 
 #define TAPPING_TERM 210
+
+// https://docs.qmk.fm/#/tap_hold
+#define TAPPING_TERM_PER_KEY
