@@ -34,3 +34,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 #define TAP_CODE_DELAY 5
+
+// 押してる間に他のキーを押すと複合キーと判定される。つまりレイヤーの反応が速い。
+// のですが逆に、間違いタイプが多くなるので、コメントアウトしておきます。
+// #define HOLD_ON_OTHER_KEY_PRESS
+
+#define TAPPING_TERM 210
