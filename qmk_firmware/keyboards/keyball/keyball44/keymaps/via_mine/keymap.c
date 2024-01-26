@@ -90,6 +90,8 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 // }
 
 const uint16_t PROGMEM test_combo1[] = {KC_F, KC_D, COMBO_END};
+const uint16_t PROGMEM test_combo2[] = {KC_D, KC_S, COMBO_END};
 combo_t                key_combos[]  = {
-    COMBO(test_combo1, LCTL(KC_D)),
+    COMBO(test_combo1, LGUI(KC_D)),
+    COMBO(test_combo2, LGUI(KC_D)),
 };
