@@ -43,3 +43,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // https://docs.qmk.fm/#/tap_hold
 #define TAPPING_TERM_PER_KEY
+
+// これを利用したが、かな、英数の切り替えや誤字が増えた。
+// #define PERMISSIVE_HOLD
+// だけど、多分Fキーだけ有効にしてもよくなかった。（get_permissive_hold）
+// #define PERMISSIVE_HOLD_PER_KEY
