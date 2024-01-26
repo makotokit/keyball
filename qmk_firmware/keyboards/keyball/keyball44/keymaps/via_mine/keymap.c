@@ -73,8 +73,8 @@ void oledkit_render_info_user(void) {
 // followings are added customizations
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LT(1, KC_F):
-            return 130;
+        case LT(0, KC_F):
+            return 160;
         default:
             return TAPPING_TERM;
     }
