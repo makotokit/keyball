@@ -53,7 +53,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 // clang-format on
 
-layer_state_t layer_state_set_user(layer_state_t state) {
+layer_state_t layer_state_set_user(layer_state_t state)
+{
     // Auto enable scroll mode when the highest layer is 3
     keyball_set_scroll_mode(get_highest_layer(state) == 3);
     return state;
@@ -61,9 +62,10 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 #ifdef OLED_ENABLE
 
-#    include "lib/oledkit/oledkit.h"
+#include "lib/oledkit/oledkit.h"
 
-void oledkit_render_info_user(void) {
+void oledkit_render_info_user(void)
+{
     keyball_oled_render_keyinfo();
     keyball_oled_render_ballinfo();
     keyball_oled_render_layerinfo();
@@ -71,12 +73,14 @@ void oledkit_render_info_user(void) {
 #endif
 
 // followings are added customizations
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LT(0, KC_F):
-            return 160;
-        default:
-            return TAPPING_TERM;
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record)
+{
+    switch (keycode)
+    {
+    case LT(0, KC_F):
+        return 160;
+    default:
+        return TAPPING_TERM;
     }
 }
 
@@ -90,6 +94,13 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 // }
 
 // combosが機能しなかった。
+const uint16_t PROGMEM test_combo1[] = {KC_W, KC_E, COMBO_END};
+const uint16_t PROGMEM test_combo2[] = {KC_I, KC_O, COMBO_END};
+combo_t key_combos[] = {
+    COMBO(test_combo1, LGUI(KC_D)),
+    COMBO(test_combo2, QK_CAPS_WORD_TOGGLE),
+};
+
 // const uint16_t PROGMEM test_combo1[] = {KC_F, KC_D, COMBO_END};
 // const uint16_t PROGMEM test_combo2[] = {KC_D, KC_S, COMBO_END};
 // combo_t                key_combos[]  = {
@@ -99,11 +110,25 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 //     COMBO(test_combo2, KC_ESC),
 // };
 
-bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LT(1, KC_F):
-            return true;
-        default:
-            return false;
-    }
-}
+// 実は短いタッピングtermを設定しているので、この設定は不要と判断した。
+// fと他のキーを同時押ししたときに、fが押されたままになるようになってしまいtypoが多発した。
+// bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record)
+// {
+//     switch (keycode)
+//     {
+//     case LT(1, KC_F):
+//         return true;
+//     default:
+//         return false;
+//     }
+// }
+
+// これは上手く認識さえたが、期待する動作にならなかった。
+// Defines the key override for F1
+// const key_override_t f1_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_1, KC_F1);
+
+// // Defines globally all key overrides
+// const key_override_t **key_overrides = (const key_override_t *[]){
+//     &f1_key_override,
+//     NULL // Null terminate the array of key overrides.
+// };
