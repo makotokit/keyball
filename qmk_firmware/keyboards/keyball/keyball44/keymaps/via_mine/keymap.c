@@ -94,13 +94,17 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record)
 // }
 
 // combosが機能しなかった。
-const uint16_t PROGMEM test_combo1[] = {KC_W, KC_E, COMBO_END};
-const uint16_t PROGMEM test_combo2[] = {KC_I, KC_O, COMBO_END};
-const uint16_t PROGMEM test_combo3[] = {KC_U, KC_I, COMBO_END};
+const uint16_t PROGMEM we_combo[] = {KC_W, KC_E, COMBO_END};
+const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
+const uint16_t PROGMEM mk_combo[] = {KC_M, KC_K, COMBO_END};
+const uint16_t PROGMEM ko_combo[] = {KC_K, KC_O, COMBO_END};
 combo_t key_combos[] = {
-    COMBO(test_combo1, LGUI(KC_D)),
-    COMBO(test_combo2, KC_SPACE),
-    COMBO(test_combo3, QK_CAPS_WORD_TOGGLE)};
+    COMBO(we_combo, LGUI(KC_D)),
+    COMBO(io_combo, KC_SPACE),
+    COMBO(mk_combo, LGUI(KC_C)),
+    COMBO(ko_combo, LGUI(KC_V)),
+    COMBO(ui_combo, CW_TOGG)};
 
 // const uint16_t PROGMEM test_combo1[] = {KC_F, KC_D, COMBO_END};
 // const uint16_t PROGMEM test_combo2[] = {KC_D, KC_S, COMBO_END};
