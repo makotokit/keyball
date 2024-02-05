@@ -55,9 +55,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 layer_state_t layer_state_set_user(layer_state_t state)
 {
-    // Auto enable scroll mode when the highest layer is 3
-    keyball_set_scroll_mode(get_highest_layer(state) == 3);
-    return state;
+  // Auto enable scroll mode when the highest layer is 3
+  keyball_set_scroll_mode(get_highest_layer(state) == 3);
+  return state;
 }
 
 #ifdef OLED_ENABLE
@@ -66,22 +66,22 @@ layer_state_t layer_state_set_user(layer_state_t state)
 
 void oledkit_render_info_user(void)
 {
-    keyball_oled_render_keyinfo();
-    keyball_oled_render_ballinfo();
-    keyball_oled_render_layerinfo();
+  keyball_oled_render_keyinfo();
+  keyball_oled_render_ballinfo();
+  keyball_oled_render_layerinfo();
 }
 #endif
 
 // followings are added customizations
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record)
 {
-    switch (keycode)
-    {
-    case LT(0, KC_F):
-        return 160;
-    default:
-        return TAPPING_TERM;
-    }
+  switch (keycode)
+  {
+  case LT(0, KC_F):
+    return 160;
+  default:
+    return TAPPING_TERM;
+  }
 }
 
 // bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
@@ -96,10 +96,11 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record)
 // combosが機能しなかった。
 const uint16_t PROGMEM test_combo1[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM test_combo2[] = {KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM test_combo3[] = {KC_U, KC_I, COMBO_END};
 combo_t key_combos[] = {
     COMBO(test_combo1, LGUI(KC_D)),
-    COMBO(test_combo2, QK_CAPS_WORD_TOGGLE),
-};
+    COMBO(test_combo2, KC_SPACE),
+    COMBO(test_combo3, QK_CAPS_WORD_TOGGLE)};
 
 // const uint16_t PROGMEM test_combo1[] = {KC_F, KC_D, COMBO_END};
 // const uint16_t PROGMEM test_combo2[] = {KC_D, KC_S, COMBO_END};
