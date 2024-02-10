@@ -53,5 +53,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define COMBO_TERM 60
 
+// keyballはデフォルトでこの設定が有効になっている模様。
+// そこで、検知までの時間を長くしてあげることで、個人の環境ではあるが、電圧認識限らず、typeCの接続が安定するようになった。
 #define SPLIT_USB_DETECT
-// #define SPLIT_USB_TIMEOUT_POOL 500
+#define SPLIT_USB_TIMEOUT 4000
+#define SPLIT_USB_TIMEOUT_POLL 30
