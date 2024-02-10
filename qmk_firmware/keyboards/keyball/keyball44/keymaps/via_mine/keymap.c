@@ -94,14 +94,18 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record)
 // }
 
 // combosが機能しなかった。
-const uint16_t PROGMEM we_combo[] = {KC_W, KC_E, COMBO_END};
+// weはよく使うので、typoになりやすいので、不使用。
+// const uint16_t PROGMEM we_combo[] = {KC_W, KC_E, COMBO_END};
+
+const uint16_t PROGMEM nm_combo[] = {KC_N, KC_M, COMBO_END};
 const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
-const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
 const uint16_t PROGMEM mk_combo[] = {KC_M, KC_K, COMBO_END};
 const uint16_t PROGMEM ko_combo[] = {KC_K, KC_O, COMBO_END};
+const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
 combo_t key_combos[] = {
-    COMBO(we_combo, LGUI(KC_D)),
-    COMBO(io_combo, KC_SPACE),
+    // COMBO(we_combo, LGUI(KC_D)),
+    COMBO(nm_combo, KC_SPACE),
+    COMBO(io_combo, KC_ENTER),
     COMBO(mk_combo, LGUI(KC_C)),
     COMBO(ko_combo, LGUI(KC_V)),
     COMBO(ui_combo, CW_TOGG)};
