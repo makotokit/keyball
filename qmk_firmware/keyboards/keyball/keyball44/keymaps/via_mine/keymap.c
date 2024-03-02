@@ -97,18 +97,35 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record)
 // weはよく使うので、typoになりやすいので、不使用。
 // const uint16_t PROGMEM we_combo[] = {KC_W, KC_E, COMBO_END};
 
-const uint16_t PROGMEM nm_combo[] = {KC_N, KC_M, COMBO_END};
+// 右手
+const uint16_t PROGMEM yu_combo[] = {KC_Y, KC_U, COMBO_END};
 const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
 const uint16_t PROGMEM mk_combo[] = {KC_M, KC_K, COMBO_END};
-const uint16_t PROGMEM ko_combo[] = {KC_K, KC_O, COMBO_END};
-const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
+const uint16_t PROGMEM nj_combo[] = {KC_N, KC_J, COMBO_END};
+const uint16_t PROGMEM nm_combo[] = {KC_N, KC_M, COMBO_END};
+const uint16_t PROGMEM hu_combo[] = {KC_H, KC_U, COMBO_END};
+// 左手
+const uint16_t PROGMEM fd_combo[] = {KC_F, KC_D, COMBO_END};
+const uint16_t PROGMEM vd_combo[] = {KC_V, KC_D, COMBO_END};
+const uint16_t PROGMEM fb_combo[] = {KC_F, KC_B, COMBO_END};
+const uint16_t PROGMEM rg_combo[] = {KC_R, KC_G, COMBO_END};
+const uint16_t PROGMEM tabq_combo[] = {KC_TAB, KC_Q, COMBO_END};
 combo_t key_combos[] = {
-    // COMBO(we_combo, LGUI(KC_D)),
-    COMBO(nm_combo, KC_SPACE),
+    COMBO(yu_combo, CW_TOGG),
     COMBO(io_combo, KC_ENTER),
+    COMBO(jk_combo, KC_ENTER),
     COMBO(mk_combo, LGUI(KC_C)),
-    COMBO(ko_combo, LGUI(KC_V)),
-    COMBO(ui_combo, CW_TOGG)};
+    COMBO(nj_combo, LGUI(KC_V)),
+    COMBO(nm_combo, KC_SPACE),
+    COMBO(hu_combo, KC_BSPC),
+
+    COMBO(fd_combo, KC_ENTER),
+    COMBO(vd_combo, LGUI(KC_C)),
+    COMBO(fb_combo, LGUI(KC_V)),
+    COMBO(rg_combo, KC_BSPC),
+    COMBO(tabq_combo, KC_ESC),
+};
 
 // const uint16_t PROGMEM test_combo1[] = {KC_F, KC_D, COMBO_END};
 // const uint16_t PROGMEM test_combo2[] = {KC_D, KC_S, COMBO_END};
